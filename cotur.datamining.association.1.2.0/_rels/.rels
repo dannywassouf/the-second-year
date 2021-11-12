@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Type="http://schemas.microsoft.com/packaging/2010/07/manifest" Target="/Cotur.DataMining.Association.nuspec" Id="R448A540B2FF9313A" />
+  <Relationship Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="/package/services/metadata/core-properties/09e06c891a0a45628b0a59bf459de04c.psmdcp" Id="R0BA4B3F44D66A4CE" />
+</Relationships>

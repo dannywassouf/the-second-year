@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Cotur.DataMining.Association</id>
+    <version>1.2.0</version>
+    <authors>cotur</authors>
+    <owners>cotur</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <description>Association Mining Algorithms
+- Apriori</description>
+    <tags>DataMining Apriori MachineLearning Algorithm</tags>
+    <repository type="git" url="https://github.com/cotur/DataMining" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>
