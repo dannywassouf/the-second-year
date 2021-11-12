@@ -1,0 +1,14 @@
+equired Software:
+
+You need to have Microsoft Visual Studio 2010 onwards installed on your system. Or you can install free Microsoft Visual Studio C# Express 2010 onwards to view and run the project.
+How to Build and Run:
+
+Download projects to your computer (Aprioiri and FPAlgo).
+
+Inside each folder open the respective solution (.sln) file.
+
+Inside soltution file, run (F5) the project and you can see the result in Console Window.
+
+Data Used:
+
+Data has been used from following link http://archive.ics.uci.edu/ml/datasets/Adult. You can view attributes and their possible values on the wesbite.
