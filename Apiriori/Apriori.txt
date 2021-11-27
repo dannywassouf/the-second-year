@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ namespace Apiriori
         {
             Apriori ap1 = ExampleOne();
           //  Apriori ap2 = new Apriori();
-            WriteApriori(ap1,2);
+            WriteApriori(ap1,.22f);
            
         }
 
@@ -49,7 +49,7 @@ namespace Apiriori
                 Console.WriteLine("\n-- Table{0} --", table++);
                 foreach (var node in Levels)
                 {
-                  //  Console.WriteLine(node.ToString(Ap.Data));
+                    //Console.WriteLine(node.ToString(Ap.Data));
                 }
             }
         }

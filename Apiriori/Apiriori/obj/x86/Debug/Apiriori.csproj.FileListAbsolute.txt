@@ -1,2 +1,4 @@
 C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\Dataminig algorithms\Apiriori\Apiriori\obj\x86\Debug\Apiriori.csprojResolveAssemblyReference.cache
 C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\Dataminig algorithms\Apiriori\Apiriori\bin\Debug\Apiriori.exe.config
+C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\محاضرات عملي\Apiriori\Apiriori\bin\Debug\Apiriori.exe.config
+C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\محاضرات عملي\Apiriori\Apiriori\obj\x86\Debug\Apiriori.csprojResolveAssemblyReference.cache
