@@ -25,3 +25,6 @@ D:\Improved Data Mining Assignment\FPAlgo Improved\FPAlgo\bin\Debug\FPAlgo.pdb
 D:\Improved Data Mining Assignment\FPAlgo Improved\FPAlgo\obj\x86\Debug\FPAlgo.csprojResolveAssemblyReference.cache
 C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\محاضرات عملي\Fp Growth code c#\DataMining-Project-CSharp\FPAlgo\FPAlgo\obj\x86\Debug\FPAlgo.exe
 C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\محاضرات عملي\Fp Growth code c#\DataMining-Project-CSharp\FPAlgo\FPAlgo\obj\x86\Debug\FPAlgo.pdb
+C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\محاضرات عملي\Fp Growth code c#\DataMining-Project-CSharp\FPAlgo\FPAlgo\bin\Debug\FPAlgo.exe
+C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\محاضرات عملي\Fp Growth code c#\DataMining-Project-CSharp\FPAlgo\FPAlgo\bin\Debug\FPAlgo.pdb
+C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\محاضرات عملي\Fp Growth code c#\DataMining-Project-CSharp\FPAlgo\FPAlgo\obj\x86\Debug\FPAlgo.csprojResolveAssemblyReference.cache

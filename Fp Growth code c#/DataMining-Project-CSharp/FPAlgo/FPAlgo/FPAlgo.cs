@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 namespace FPAlgo
 {
 
@@ -24,14 +23,12 @@ namespace FPAlgo
         public int Count { get; set; }
         public bool Visited { get; set; }
 
-
-        
+      
     }
 
-  
 
-    /*This is the Node class which represents each node. Every node has its its children and all nodes*/
-    /* have ItemValue which represent attribute-value pair and count for the count it appears in database*/
+    /*This is the Node class which represents each node. Every node has its children 
+     and all nodes have ItemValue which represent attribute-value pair and count for the count it appears in database*/
     public class Tree
     {
         public Node root;
@@ -42,6 +39,7 @@ namespace FPAlgo
             root = new Node();
             root.Count = 0;
             root.item = null;
+       
 
             /*i.e. the minimum support count 40% of total number of items*/
             minSupportCount = 13024;
@@ -97,15 +95,12 @@ namespace FPAlgo
         }
 
        
-        /*This method geenrtaes most frequent itemset by mining the tree created*/
-        /*It receives root node and starts mining from there*/
+        /*This method generate  most frequent itemset by mining the tree created
+        It receives root node and starts mining from there*/
         public List<string> generateFrequentItemset(Node rootNode, List<string> frequentPattern)
         {
             
-            
-
-
-            foreach (KeyValuePair<string, Node> item in rootNode.item)
+          foreach (KeyValuePair<string, Node> item in rootNode.item)
             {
 
                 if (!item.Value.Visited && item.Value.Count > minSupportCount)

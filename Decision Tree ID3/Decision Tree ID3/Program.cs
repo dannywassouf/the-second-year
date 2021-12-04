@@ -10,6 +10,9 @@ namespace MachineLearning.DecisionTree
         int Category;
         T[] CategoryLabels;
         DecisionTreeNode<T> Root;
+        public DecisionTreeID3()
+        {
+        }
         public DecisionTreeID3(T[,] data, string[] names, T[] categoryLabels)
         {
             Data = data;
@@ -22,6 +25,7 @@ namespace MachineLearning.DecisionTree
             int nRows = Data.GetLength(0);
             int nCols = Data.GetLength(1);
             int[] rows = new int[nRows];
+
             int[] cols = new int[nCols];
             for (int i = 0; i < nRows; i++) rows[i] = i;
             for (int i = 0; i < nCols; i++) cols[i] = i;
@@ -174,22 +178,22 @@ namespace MachineLearning.DecisionTree
         {
             var da = new string[,]
             {
-                {"youth","high","no","fair","no"},
-                {"youth","high","no","excellent","no"},
-                {"middle_aged","high","no","fair","yes"},
-                {"senior","medium","no","fair","yes"},
-                {"senior","low","yes","fair","yes"},
-                {"senior","low","yes","excellent","no"},
-                {"middle_aged","low","yes","excellent","yes"},
-                {"youth","medium","no","fair","no"},
-                {"youth","low","yes","fair","yes"},
-                {"senior","medium","yes","fair","yes"},
-                {"youth","medium","yes","excellent","yes"},
-                {"middle_aged","medium","no","excellent","yes"},
-                {"middle_aged","high","yes","fair","yes"},
-                {"senior","medium","no","excellent","no"}
+                {"sunny","hot","high","false","no"},
+                {"sunny","hot","high","true","no"},
+                {"overcast","hot","high","false","yes"},
+                {"rain","mild","high","false","yes"},
+                {"rain","cool","normal","false","yes"},
+                {"rain","cool","normal","true","no"},
+                {"overcast","cool","normal","true","yes"},
+                {"sunny","mild","high","false","no"},
+                {"sunny","cool","normal","false","yes"},
+                {"rain","mild","normal","false","yes"},
+                {"sunny","mild","normal","true","yes"},
+                {"overcast","mild","high","true","yes"},
+                {"overcast","hot","normal","false","yes"},
+                {"rain","mild","high","true","no"}
             };
-            var names = new string[] { "age", "income", "student", "credit_rating", "Class: buys_computer" };
+            var names = new string[] { "outlook", "tempreture", "humidity", "windy", "play" };
             var tree = new DecisionTreeID3<string>(da, names, new string[] { "yes", "no" });
             tree.Learn();
             Console.ReadKey();

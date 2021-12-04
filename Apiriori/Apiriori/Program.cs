@@ -13,7 +13,7 @@ namespace Apiriori
         {
             Apriori ap1 = ExampleOne();
           //  Apriori ap2 = new Apriori();
-            WriteApriori(ap1,2);
+            WriteApriori(ap1,.22f);
            
         }
 
@@ -35,13 +35,17 @@ namespace Apiriori
              new List<int>(){0,2},
              new List<int>(){0,1,2,4},
              new List<int>(){0,1,2},
+
             };
-            Apriori myApiriori=new Apriori(new DataFields(5,Transactions,fieldNames));
+            DataFields d = new DataFields(5, Transactions, fieldNames);
+
+            Apriori myApiriori=new Apriori(d);
             return myApiriori;
         }
         static void WriteApriori(Apriori Ap,float minsupport)
         {
             Ap.CalculateCNodes(minsupport);
+            
          
             int table = 1;
             foreach(var Levels in Ap.EachLevelOfNodes)
@@ -49,9 +53,16 @@ namespace Apiriori
                 Console.WriteLine("\n-- Table{0} --", table++);
                 foreach (var node in Levels)
                 {
-                  //  Console.WriteLine(node.ToString(Ap.Data));
+                    Console.WriteLine(node.ToString(Ap.Data));
                 }
             }
+
+            Console.WriteLine("\n-- Rules --\n");
+            foreach(var rules in Ap.Rules.Where(rule=>rule.Confidence=> 0.7f)) //this for is to show all azsociation rules witch apply this condition
+            {
+                Console.Write(rules.ToString(Ap.Rules));
+            }
+
         }
 
     }
