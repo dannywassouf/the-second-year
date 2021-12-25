@@ -35,7 +35,8 @@ namespace Apiriori
              new List<int>(){0,2},
              new List<int>(){0,1,2,4},
              new List<int>(){0,1,2},
-             new List<int>(){4,0}
+             new List<int>(){4,0},
+             new List<int>(){5,1}
 
             };
             DataFields d = new DataFields(5, Transactions, fieldNames);

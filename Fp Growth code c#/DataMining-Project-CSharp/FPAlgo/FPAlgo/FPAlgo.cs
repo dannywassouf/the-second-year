@@ -12,7 +12,8 @@ namespace FPAlgo
         
         public Dictionary<string, Node> item = new Dictionary<string, Node>();
 
-        public Node()
+        public 
+         Node()
         {
             count = 0;
             visited = false;
@@ -21,6 +22,8 @@ namespace FPAlgo
 
         /*Public properties*/
         public int Count { get; set; }
+
+       // public static int setc(int c1) { count = c1; }
         public bool Visited { get; set; }
 
       
@@ -36,8 +39,8 @@ namespace FPAlgo
 
         public Tree()
         {
-            root = new Node();
-            root.Count = 0;
+            root = new Node(); //
+           // root.Count = 0;
             root.item = null;
        
 
@@ -49,33 +52,34 @@ namespace FPAlgo
         /*This method builds the tree of freuqent item sets*/
         public void BuildTree(ref List<string> elemsRecvd)
         {
-            if (root.item == null)
+            Node crawler = root;
+            if (root.item == null) // الشجرة فارغة 
             {
-                Node crawler = root;
+                
                 foreach (string element in elemsRecvd)
                 {
                     Node node = new Node();
 
                     node.Count = 1;
 
-                    crawler.item = new Dictionary<string, Node>();
-                    crawler.item[element] = node;
-                    crawler = node;
+                    crawler.item = new Dictionary<string, Node>();   // اجعل العقدة الجديدة ابن للعقدة الأساسية
+                    crawler.item[element] = node; // تقوم بجعل قيمة العقدة باسم العقدة الموجودة
+                    crawler = node;  // نقوم بزيادة العداد 
                 }
            
             }
             else 
             {
-                Node crawler = root;
-                if (crawler.item != null)
-                {
+               
+               // if (crawler.item != null)
+               // {
                     foreach (string element in elemsRecvd)
                     {
-                        if (crawler.item.ContainsKey(element))
+                        if (crawler.item.ContainsKey(element))  // تقوم هذه العبارة بمعرفة أذا كانت العقدة الجديدة مو جودة
                         {
-                            Node node = crawler.item[element];
-                            node.Count = node.Count + 1;
-                            crawler.item[element] = node;
+                            //Node node = crawler.item[element];
+                            node.Count = node.Count + 1;  // زيادة العداد 
+                           // crawler.item[element] = node;
                             crawler = node;
                         }
                         else
@@ -85,7 +89,7 @@ namespace FPAlgo
                             crawler.item.Add(element, node);
                             crawler = node;
                         }
-                    }
+                  //  }
                 }
 
                 
@@ -178,11 +182,12 @@ namespace FPAlgo
         private static List<List<Object>> returnL1(ref List<List<Object>> Ck)
         {
             List<List<Object>> L1Items = new List<List<Object>>();
-            for (int count = 0; count < Ck.Count; count++)
+            for (int count = 0; count < Ck.Count; count++)  // ليقوم بالمرور على أسطر المصفوفة 
             {
-                if (Convert.ToInt32(Ck[count][1]) > minSupportCount)
+                if (Convert.ToInt32(Ck[count][1]) >= minSupportCount)
                 {
                     L1Items.Add(Ck[count]);
+                   
                 }
             }
             return L1Items;
@@ -192,7 +197,7 @@ namespace FPAlgo
         /*This method sorts L1, containing all attribute-values with count greater than minimum support count*/
         private static void sortL1Descending(ref List<List<Object>> L1)
         {
-            List<List<Object>> decendingSortedL1 = new List<List<Object>>();
+           // List<List<Object>> decendingSortedL1 = new List<List<Object>>();
 
             for (int i = 0; i < L1.Count; i++)
             {
@@ -201,7 +206,7 @@ namespace FPAlgo
 
                     if (Convert.ToInt32(L1[j][1]) < Convert.ToInt32(L1[j + 1][1]))
                     {
-                        List<Object> temp = new List<Object>();
+                        List<Object> temp = new List<Object>(); // string temp;
                         temp = L1[j];
                         L1[j] = L1[j + 1];
                         L1[j + 1] = temp;
@@ -483,7 +488,7 @@ namespace FPAlgo
 
             /*L1Itemset is now sorted*/
             sortL1Descending(ref L1ItemList);
-
+                
 
             /*Create Tree class object*/
             Tree tree = new Tree();

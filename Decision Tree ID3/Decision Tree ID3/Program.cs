@@ -184,7 +184,7 @@ namespace MachineLearning.DecisionTree
                 {"rain","mild","high","false","yes"},
                 {"rain","cool","normal","false","yes"},
                 {"rain","cool","normal","true","no"},
-                {"overcast","cool","normal","true","yes"},
+                {"overcast","cool","normal","true","yes"},          
                 {"sunny","mild","high","false","no"},
                 {"sunny","cool","normal","false","yes"},
                 {"rain","mild","normal","false","yes"},
@@ -192,10 +192,14 @@ namespace MachineLearning.DecisionTree
                 {"overcast","mild","high","true","yes"},
                 {"overcast","hot","normal","false","yes"},
                 {"rain","mild","high","true","no"}
-            };
+
+
+             };
             var names = new string[] { "outlook", "tempreture", "humidity", "windy", "play" };
-            var tree = new DecisionTreeID3<string>(da, names, new string[] { "yes", "no" });
-            tree.Learn();
+            string [] g=new string[] { "yes", "no" };
+            var tree = new DecisionTreeID3<string>(da, names,g );
+            //tree.Learn();
+                      
             Console.ReadKey();
         }
     }

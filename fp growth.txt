@@ -1,0 +1,147 @@
+
+
+    public class Node 
+    {
+        private int count;
+        private bool visited;
+        
+        public Dictionary<string, Node> item = new Dictionary<string, Node>();
+
+        public 
+         Node()
+        {
+            count = 0;
+            visited = false;
+        }
+
+
+      
+    }
+
+
+    
+    public class Tree
+    {
+        public Node root;
+        private int minSupportCount;
+
+        public Tree()
+        {
+            root = new Node(); //
+           // root.Count = 0;
+            root.item = null;
+       
+
+           
+        }
+
+
+        /*This method builds the tree of freuqent item sets*/
+        public void BuildTree(ref List<string> elemsRecvd)
+        {
+            Node crawler = root;
+            if (root.item == null) // «·‘Ã—… ›«—€… 
+            {
+                
+                foreach (string element in elemsRecvd)
+                {
+                    Node node = new Node();
+
+                    node.Count = 1;
+
+                    crawler.item = new Dictionary<string, Node>();   // «Ã⁄· «·⁄ﬁœ… «·ÃœÌœ… «»‰ ··⁄ﬁœ… «·√”«”Ì…
+                    crawler.item[element] = node; //  ﬁÊ„ »Ã⁄· ﬁÌ„… «·⁄ﬁœ… »«”„ «·⁄ﬁœ… «·„ÊÃÊœ…
+                    crawler = node;  // ‰ﬁÊ„ »“Ì«œ… «·⁄œ«œ 
+                }
+           
+            }
+            else 
+            {
+               
+               // if (crawler.item != null)
+               // {
+                    foreach (string element in elemsRecvd)
+                    {
+                        if (crawler.item.ContainsKey(element))  //  ﬁÊ„ Â–Â «·⁄»«—… »„⁄—›… √–« ﬂ«‰  «·⁄ﬁœ… «·ÃœÌœ… „Ê ÃÊœ…
+                        {
+                            //Node node = crawler.item[element];
+                            node.Count = node.Count + 1;  // “Ì«œ… «·⁄œ«œ 
+                           // crawler.item[element] = node;
+                            crawler = node;
+                        }
+                        else
+                        {
+                            Node node = new Node();
+                            node.Count = 1;
+                            crawler.item.Add(element, node);
+                            crawler = node;
+                        }
+                  //  }
+                }
+
+                
+            }
+           
+           
+        }
+
+       
+       
+
+    }
+
+    
+
+        /*This method prunes all those itemstes from C1 with count below minimum support count*/
+        private static List<List<Object>> returnL1(ref List<List<Object>> Ck)
+        {
+            List<List<Object>> L1Items = new List<List<Object>>();
+            for (int count = 0; count < Ck.Count; count++)  // ·ÌﬁÊ„ »«·„—Ê— ⁄·Ï √”ÿ— «·„’›Ê›… 
+            {
+                if (Convert.ToInt32(Ck[count][1]) >= minSupportCount)
+                {
+                    L1Items.Add(Ck[count]);
+                   
+                }
+            }
+            return L1Items;
+        }
+
+
+        /*This method sorts L1, containing all attribute-values with count greater than minimum support count*/
+        private static void sortL1Descending(ref List<List<Object>> L1)
+        {
+          
+            for (int i = 0; i < L1.Count; i++)
+            {
+                for (int j = 0; j < L1.Count -1; j++)
+                {
+
+                    if (Convert.ToInt32(L1[j][1]) < Convert.ToInt32(L1[j + 1][1]))
+                    {
+                        List<Object> temp = new List<Object>(); // string temp;
+                        temp = L1[j];
+                        L1[j] = L1[j + 1];
+                        L1[j + 1] = temp;
+                    }
+                }
+            }               
+
+        }
+
+        }
+                           
+        static void Main(string[] args)
+        {
+            
+
+                             
+            /*C1 and L1 Computation peformed. L1 will have all frequent attribute-value pairs*/
+            C1ItemList = returnC1(ref processedDatabase);
+            L1ItemList = returnL1(ref C1ItemList);
+
+            /*L1Itemset is now sorted*/
+            sortL1Descending(ref L1ItemList);
+                
+
+            }

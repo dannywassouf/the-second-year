@@ -1,0 +1,51 @@
+
+    public class DecisionTreeID3<T> where T : IEquatable<T>
+    {
+        T[,] Data;
+        string[] Names;
+        int Category;
+        T[] CategoryLabels;
+        DecisionTreeNode<T> Root;
+        public DecisionTreeID3()
+        {
+        }
+        public DecisionTreeID3(T[,] data, string[] names, T[] categoryLabels)
+        {
+            Data = data;
+            Names = names;
+            Category = data.GetLength(1) - 1;//Categorical variables need to be placed in the last column
+            CategoryLabels = categoryLabels;
+        }
+        
+        }
+       
+        static void Main(string[] args)
+        {
+            var da = new string[,]
+            {
+                {"sunny","hot","high","false","no"},
+                {"sunny","hot","high","true","no"},
+                {"overcast","hot","high","false","yes"},
+                {"rain","mild","high","false","yes"},
+                {"rain","cool","normal","false","yes"},
+                {"rain","cool","normal","true","no"},
+                {"overcast","cool","normal","true","yes"},          
+                {"sunny","mild","high","false","no"},
+                {"sunny","cool","normal","false","yes"},
+                {"rain","mild","normal","false","yes"},
+                {"sunny","mild","normal","true","yes"},
+                {"overcast","mild","high","true","yes"},
+                {"overcast","hot","normal","false","yes"},
+                {"rain","mild","high","true","no"}
+
+
+             };
+            var names = new string[] { "outlook", "tempreture", "humidity", "windy", "play" };
+            string [] g=new string[] { "yes", "no" };
+            var tree = new DecisionTreeID3<string>(da, names,g );
+            tree.Learn();
+                      
+            
+        }
+    }
+}

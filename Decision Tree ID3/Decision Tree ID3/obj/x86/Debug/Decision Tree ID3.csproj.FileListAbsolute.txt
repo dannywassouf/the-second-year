@@ -7,3 +7,4 @@ C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\DataMining\Decision Tr
 C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\DataMining\Decision Tree ID3\Decision Tree ID3\bin\Debug\Decision Tree ID3.exe
 C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\DataMining\Decision Tree ID3\Decision Tree ID3\bin\Debug\Decision Tree ID3.pdb
 C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\DataMining\Decision Tree ID3\Decision Tree ID3\obj\x86\Debug\Decision Tree ID3.csprojResolveAssemblyReference.cache
+C:\Users\Toshiba\Desktop\Hazem Vedios\Database\third year\محاضرات عملي\Decision Tree ID3\Decision Tree ID3\obj\x86\Debug\Decision Tree ID3.csprojResolveAssemblyReference.cache
